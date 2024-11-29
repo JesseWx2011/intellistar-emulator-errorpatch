@@ -30,7 +30,10 @@ function setCurrentConditions(){
   getElement('cc-gusts').innerHTML = gusts;
   getElement('cc-feelslike').innerHTML = feelsLike;
   getElement('cc-pressuretrend').innerHTML = pressureTrend;
-  getElement('ccicon').href.baseVal = 'assets/icons/conditions/' + currentIcon +'.svg';
+  getElement('ccicon').href.baseVal = 'assets/icons/conditions/' + currentIcon +'.gif';
+
+  if (currentIcon = 26)
+    getElement('ccicon').href.baseVal = 'assets/icons/conditions/' + currentIcon +'.svg';
 }
 
 function createLogoElements(){
