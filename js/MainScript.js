@@ -98,7 +98,7 @@ function setInformation(){
 }
 
 function setMainBackground(){
-  getElement('background-image').style.backgroundImage = `../assets/backgrounds/${background}`;
+  getElement('background-image').style.backgroundImage = `../assets/backgrounds/2.png`;
 }
 
 function checkStormMusic(){
