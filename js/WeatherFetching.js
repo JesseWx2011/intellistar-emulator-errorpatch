@@ -41,26 +41,7 @@ function fetchAlerts(){
           fetchForecast();
           return;
         }
-        if (data.features.length == 1) {
-          alerts[0] = data.features[0].properties.event + '<br>' + data.features[0].properties.description.replace("..."," ").replace(/\*/g, "")
-          for(var i = 0; i < data.features.length; i++){
-            /* Take the most important alert message and set it as crawl text
-            This will supply more information i.e. tornado warning coverage */
-            alertCrawl = alertCrawl + " " + data.features[i].properties.description.replace("...", " ");
-          }
-        }
-        else {
-          for(var i = 0; i < data.features.length; i++){
-            /* Take the most important alert message and set it as crawl text
-            This will supply more information i.e. tornado warning coverage */
-            alertCrawl = alertCrawl + " " + data.features[i].properties.description.replace("...", " ");
-
-            alerts[i] = data.features[i].properties.event
-          }
-        }
-        if(alertCrawl != ""){
-          CONFIG.crawl = alertCrawl;
-        }
+        // It is more realistic to have the crawl to not have the alert scrolling, as it usually is on another scroll.
         alertsActive = alerts.length > 0;
         fetchForecast();
       });
